@@ -26,12 +26,33 @@ RSpec.describe Plato do
       end
 
       it "Select" do
+        @lista_1.insert_head(@alimento1)
+        @lista_1.insert_head(@alimento2)
+
+        expect(@lista_1.select{|i| i.to_s }).to be
+      end
+
+      it "Max" do
+        @lista_1.insert_head(@alimento1)
+        @lista_1.insert_head(@alimento2)
+
+        #expect(@lista_1.max).to eq(@alimento1)  
         
       end
-      
-      
+
+      it "Min" do
+        @lista_1.insert_head(@alimento1)
+        @lista_1.insert_head(@alimento2)
+
+        #expect(@lista_1.min).to eq(@alimento2)
+      end
+
+      it "Sort" do
+        @lista_1.insert_head(@alimento1)
+        @lista_1.insert_head(@alimento2)
+
+        #expect(@lista_1.sort).to eq([@alimento2,@alimento1])
+      end      
     end
-    
-    
 
 end

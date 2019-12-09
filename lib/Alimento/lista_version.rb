@@ -81,7 +81,7 @@ class Lista
 
 	  it = @head
 
-	  while it != nil
+	  while it != nil do
 		  yield it.value
 		  it = it.next_node
 	  end
