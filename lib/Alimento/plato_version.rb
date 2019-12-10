@@ -9,7 +9,7 @@ class Plato
 
 	def platos(lista)
 
-		@listas_c = listas
+		@listas_c = lista
 
 	end
 
@@ -31,16 +31,18 @@ class Plato
 		@hid = hid
 	end
 	
-	def VCT(v)
-		@vct = v
+	def VCT()
+		@vct
 	end
 
-	def to_s
+	def to_s()
 
-		puts "#{@nombre,@lista_c,@gramos,@prot}"
+		"(#{@nombre},#{@gramos},#{@prot},#{@lip},#{@hid})"
 
 	end
 
-
-
+	def to_plato()
+		"#{@lista_c}"
+	end
+	
 end

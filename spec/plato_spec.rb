@@ -6,6 +6,8 @@ RSpec.describe Plato do
       @alimento2 = Alimentos.new("Huevos",13.0,1.1,11.0,4.2,5.7)
 
       @lista_1 = Lista.new()
+
+      @plato = Plato.new("Carne")
     end
 
     context "Comparar alimentos" do
@@ -55,4 +57,31 @@ RSpec.describe Plato do
       end      
     end
 
+    context "Plato" do
+      it "Inicio" do
+        @plato.platos(@alimento1.tipo_alimento)
+        @plato.gramos(100.0)
+        @plato.proteina(@alimento1.prot)
+        @plato.lipidos(@alimento1.lip)
+        @plato.hidratos(@alimento1.carbo)
+        
+        expect(@plato.to_s).to eq("(Carne,100.0,21.1,3.1,0.0)")
+
+        @plato.platos(@lista_1)
+        expect(@plato.to_plato).to eq("")
+      end
+    end
+
+    context "Eficiencia energética" do
+      it "Emisiones totales diarias" do
+      end
+
+      it "Metros cuadrados" do
+        
+      end
+
+      it "Formateo" do
+        
+      end
+    end
 end
