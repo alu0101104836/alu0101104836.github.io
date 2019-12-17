@@ -51,4 +51,14 @@ class Alimentos
     return @gases
   end
 
+  def each
+    
+    it = @tipo_alimento
+
+    while it != nil do
+      yield it
+    end
+  end
+  
+
 end
