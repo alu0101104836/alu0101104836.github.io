@@ -50,15 +50,6 @@ class Alimentos
   def to_gases()
     return @gases
   end
-
-  def each
-    
-    it = @tipo_alimento
-
-    while it != nil do
-      yield it
-    end
-  end
   
 
 end

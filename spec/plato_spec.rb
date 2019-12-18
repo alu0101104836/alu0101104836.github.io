@@ -156,9 +156,6 @@ end
 				@p10g=Lista.new()
 				@p10g.insert_head([230,120,50,300])
 				@plato10 = Platillo.new("plato 4", @p10l,@p10g)
-
-				@Dieta_Carne = Lista.new()
-				@Dieta_Carne.insert_head([@plato9, @plato10])
       end
       
 
@@ -197,6 +194,44 @@ end
 				expect(@List.min).to eq(@plato10)
 				expect(@List.sort).to eq([nil,nil,nil,nil])
 			end
-    end 
+    end
+    
+    context "Huella" do
+      
+      it "Menu" do
+        @Dieta_Carne = Lista.new()
+        @Dieta_Carne.insert_head([@plato9, @plato10])
+        
+        @Dieta_Vegetaria = Lista.new()
+        @Dieta_Vegetaria.insert_head([@plato9, @plato10])
+        
+        @Dieta_Vasca = Lista.new()
+        @Dieta_Vasca.insert_head([@plato9, @plato10])
+        
+        @Dieta_LPC = Lista.new()
+        @Dieta_LPC.insert_head([@plato9, @plato10])
+        
+        @Dieta_Vegeliana = Lista.new()
+				@Dieta_Vegeliana.insert_head([@plato9, @plato10])
+      end
+
+      it "Precio" do
+        @Precio_Carne = Lista.new
+        @Precio_Carne.insert_head([10.50,25.26])
+
+        @Precio_Vegetaria = Lista.new
+        @Precio_Vegetaria.insert_head([10.50,25.26])
+
+        @Precio_Vasca = Lista.new
+        @Precio_Vasca.insert_head([10.50,25.26])
+
+        @Precio_LPC = Lista.new
+        @Precio_LPC.insert_head([10.50,25.26])
+
+        @Precio_Vegelia = Lista.new
+        @Precio_Vegelia.insert_head([10.50,25.26])
+      end
+    end
+    
     
   end

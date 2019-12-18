@@ -3,35 +3,33 @@ require_relative './plato_version.rb'
 class Platillo < Plato
 
     include Comparable
-    attr_accessor :nombre, :lista_c, :comidas, :gramos
+    attr_accessor :nombre, :lista_c, :comidas, :gramos, :total_terreno, :total_gases
 
     def initialize(nombre,lista,gramos)
         super(nombre,lista,gramos)       
     end
     
     def TotalGases()
-        total_gases = 0
         alimentos_ = @lista_c.head
         gramos_ = @gramos.head
         while (alimentos_ != nil && gramos_ != nil )
-        total_gases += (alimentos_.value.gases * gramos_.value)/100
+        @total_gases += (alimentos_.value.gases * gramos_.value)/100
         alimentos_ = alimentos_.next_node
         gramos_ = gramos_.next_node 
         end
-        return total_gases.round(2)
+        return @total_gases.round(2)
     end
 
     def TotalTerreno()
-        total_terreno = 0
         alimentos_ = @lista_c.head
         gramos_ = @gramos.head
 
         while (alimentos_ != nil && gramos_ != nil )
-        total_terreno += (alimentos_.value.terreno * gramos_.value)/100
+        @total_terreno += (alimentos_.value.terreno * gramos_.value)/100
         alimentos_ = alimentos_.next_node
         gramos_ = gramos_.next_node 
         end
-        return total_terreno.round(2)
+        return @total_terreno.round(2)
     end
 
     def ValorAmbientalTotal
@@ -49,6 +47,28 @@ class Platillo < Plato
     def to_s()
         "#{@nombre}"#{@lista_c},#{@gramos_}"
     end    
+
+    def impacto_kcal()
+        if standard_cal < @total_gases
+            return "Alto"
+          elsif standard_cal > @total_gases
+            return "Bajo"
+          else
+            return "Igual"
+          end
+    end
+
+    def impacto_carbono()
+        if standard_g < @prot
+            return "Alto"
+          elsif standard_g > @prot
+            return "Bajo"
+          else
+            return "Igual"
+          end
+    end
+    
+    
     
     def <=>(plato)
         if plato.instance_of?Platillo
