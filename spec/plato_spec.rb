@@ -233,12 +233,13 @@ end
       end
 
       it "Impacto" do
-        expect(@Dieta_Carne.impacto_kcal(830,672)).to eq("Alto")
-        expect(@Dieta_Carne.impacto_carbono(1200,800)).to eq("Alto")  
+        @tail = @Dieta_Carne.get_tail
+        expect(@tail.impacto_kcal(830,672)).to eq("Alto")
+        expect(@tail.impacto_carbono(1200,800)).to eq("Alto")  
       end
 
       it "Dinero" do
-        
+        expect(@Precio_Carne.to_s).to eq("")
       end
       
       
