@@ -1,3 +1,12 @@
+# = Autor: Carlos Socas García
+# == Practica 9.
+# === Asignatura: Lenguages y Paradigmas de Programación
+# Curso: 3º
+# 
+# Clase : Alimento
+
+
+
 module C1
 	def <=>(other)
 		return nil unless other.instance_of?@valor_c

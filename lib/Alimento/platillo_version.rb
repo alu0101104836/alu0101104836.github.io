@@ -1,3 +1,10 @@
+# = Autor: Carlos Socas García
+# == Practica 9.
+# === Asignatura: Lenguages y Paradigmas de Programación
+# Curso: 3º
+# 
+# Clase : Platillo
+
 require_relative './plato_version.rb'
 
 class Platillo < Plato
@@ -48,20 +55,20 @@ class Platillo < Plato
         "#{@nombre}"#{@lista_c},#{@gramos_}"
     end    
 
-    def impacto_kcal()
-        if standard_cal < @total_gases
+    def impacto_kcal(standard_cal1, standard_cal2)
+        if standard_cal1 < @total_gases
             return "Alto"
-          elsif standard_cal > @total_gases
+          elsif standard_cal2 > @total_gases
             return "Bajo"
           else
             return "Igual"
           end
     end
 
-    def impacto_carbono()
-        if standard_g < @prot
+    def impacto_carbono(standard_g1, standard_g2)
+        if standard_g1 < @total_terreno
             return "Alto"
-          elsif standard_g > @prot
+          elsif standard_g2 > @total_terreno
             return "Bajo"
           else
             return "Igual"

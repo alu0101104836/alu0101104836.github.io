@@ -231,7 +231,20 @@ end
         @Precio_Vegelia = Lista.new
         @Precio_Vegelia.insert_head([10.50,25.26])
       end
+
+      it "Impacto" do
+        expect(@Dieta_Carne.impacto_kcal(830,672)).to eq("Alto")
+        expect(@Dieta_Carne.impacto_carbono(1200,800)).to eq("Alto")  
+      end
+
+      it "Dinero" do
+        
+      end
+      
+      
     end
+
+
     
     
   end

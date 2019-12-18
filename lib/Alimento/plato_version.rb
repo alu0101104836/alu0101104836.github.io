@@ -1,3 +1,11 @@
+# = Autor: Carlos Socas García
+# == Practica 9.
+# === Asignatura: Lenguages y Paradigmas de Programación
+# Curso: 3º
+# 
+# Clase : Plato
+
+
 class Plato 
 
 	include Comparable
